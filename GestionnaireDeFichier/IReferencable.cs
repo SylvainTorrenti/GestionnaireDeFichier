@@ -6,9 +6,7 @@ using System.Threading.Tasks;
 
 namespace GestionnaireDeFichier
 {
-    public abstract class Element
+    public interface IReferencable
     {
-        private string Nom { get; set; }
-        public abstract int getTaille();
     }
 }
