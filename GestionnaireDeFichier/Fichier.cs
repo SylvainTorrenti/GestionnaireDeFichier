@@ -12,7 +12,6 @@ namespace GestionnaireDeFichier
 
         public Fichier()
         {
-
         }
         public override int getTaille()
         {
