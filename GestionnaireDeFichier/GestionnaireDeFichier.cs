@@ -20,7 +20,7 @@ namespace GestionnaireDeFichier
         /// <summary>
         /// Obtenir le dossier courant
         /// </summary>
-        /// <returns></returns>
+        /// <returns>le dossier courant</returns>
         public Dossier getDossierCourant()
         {
             return this.DossierCourant;
@@ -28,7 +28,7 @@ namespace GestionnaireDeFichier
         /// <summary>
         /// Obtenir le contenu du dossier courant
         /// </summary>
-        /// <returns></returns>
+        /// <returns>La liste des element contenu dans le dossier courant</returns>
         public List<Element> getContenuDossier()
         {
             return DossierCourant.getContenu();
@@ -43,7 +43,7 @@ namespace GestionnaireDeFichier
         /// <summary>
         /// Pour descendre vers le dossier cible enfant
         /// </summary>
-        /// <param name="dossierEnfant"></param>
+        /// <param name="dossierEnfant">Le dossier cible enfant du dossier courant</param>
         public void descdendreDansDossierEnfant(Dossier dossierEnfant)
         {
             this.DossierCourant = dossierEnfant;
@@ -51,11 +51,15 @@ namespace GestionnaireDeFichier
         /// <summary>
         /// Supprime un element du dossier courant
         /// </summary>
-        /// <param name="element"></param>
+        /// <param name="element">element à supprimer</param>
         public void supprimerElement(Element element)
         {
             getContenuDossier().Remove(element);
         }
+        /// <summary>
+        /// Creer un nouveau fichier
+        /// </summary>
+        /// <returns>Le fichier creer</returns>
         public Fichier creerNouveauFichier()
         {
             Fichier nouveauFichier = new Fichier();
@@ -65,7 +69,7 @@ namespace GestionnaireDeFichier
         /// <summary>
         /// Creer un element dans le dossier courant
         /// </summary>
-        /// <returns></returns>
+        /// <returns>dossier créé</returns>
         public Dossier creerNouveauDossier()
         {
             Dossier nouveauDossier = new Dossier();
@@ -75,7 +79,7 @@ namespace GestionnaireDeFichier
         /// <summary>
         /// Creer un lien dans le dossier courant
         /// </summary>
-        /// <param name="referencable"></param>
+        /// <param name="referencable">element qui est refrençable</param>
         /// <returns></returns>
         public Lien creerNouveauLien(IReferencable referencable)
         {
@@ -86,8 +90,8 @@ namespace GestionnaireDeFichier
         /// <summary>
         /// Deplace un element cible vers un dossier cible
         /// </summary>
-        /// <param name="element"></param>
-        /// <param name="dossierDestination"></param>
+        /// <param name="element">element à depalcer</param>
+        /// <param name="dossierDestination">dossier de destination</param>
         public void deplacerElement(Element element,Dossier dossierDestination) 
         {
             
